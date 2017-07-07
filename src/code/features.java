@@ -12,8 +12,8 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 import javax.swing.JFileChooser;
-
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+
 
 class features 
 {
@@ -62,7 +62,7 @@ class features
 		        		        scanner.close();
 		        		    }
 		        		 
-		        		 
+		        		 //Tagging the text before removal of punctuation
 		        		 	//Count the number of sentences 
 		        		 	String tagged1 = tagger.tagString(line);
 						    final String[] tokens1 = tagged1.split(" ");
@@ -74,6 +74,7 @@ class features
 						          arrlist1.add(realToken1);
 							  }
 						    int sent = Collections.frequency(arrlist1, ".");
+						    int punt=fea.punct(arrlist1);//counting the frequency of punctuations
 							
 		        		 
 		        		 
@@ -154,13 +155,16 @@ class features
 						array[i][j++]=(adverb/cc)*100;//adverbs
 						array[i][j++]=uni/cc; //TTR(V/N)
 						array[i][j++]=Math.pow(cc,Math.pow(uni, -0.165));//Brunet's index
-						int once=fea.word_once(line);// number of words occuring once
+						int once=fea.word_once(line);// number of words occurring once
 						array[i][j++]=(100*Math.log(cc))/(1-(once/uni));//Honore's Statistic
 						double word_mean=fea.word_length(line);
 						array[i][j++]=word_mean*100;//Mean length of words
 						array[i][j++]=((no+sub+verb+adverb)/cc)*100;//Lexical density
 						double funct=fea.func(arrlist);
 						array[i][j++]=(funct/cc)*100;//Function words
+						array[i][j++]=(punt/cc)*100; //number of punctuations
+						double tri=fea.count(line);
+						array[i][j++]=(tri/cc)*100;//number of trigrams
 						i++;
 						j=0;
 												
@@ -222,13 +226,17 @@ class features
 					fileWriter.newLine();
 					fileWriter.write("@ATTRIBUTE FUNCTION_WORDS"+" real");
 					fileWriter.newLine();
+					fileWriter.write("@ATTRIBUTE PUNCTUATION"+" real");
+					fileWriter.newLine();
+					fileWriter.write("@ATTRIBUTE TRIGRAMS"+" real");
+					fileWriter.newLine();
 					fileWriter.newLine();
 					//fileWriter.newLine();
 					fileWriter.write("@DATA");
 					fileWriter.newLine();
 					for(int k=0;k<mm;k++)
 			        {
-			        	for(int m=0;m<20;m++)
+			        	for(int m=0;m<22;m++)
 			        		fileWriter.write(new String(Double.toString(array[k][m]))+",");
 			        	//fileWriter.write("?");
 			        	fileWriter.newLine();
@@ -244,7 +252,9 @@ class features
 				
 		}//end of if
 		
-	}
+		
+		
+	}//end of main
 	
 	
 	
@@ -344,6 +354,66 @@ class features
 		int pos_pro = Collections.frequency(arr, "PRP$");
 		return (per_pro);
 	}
+	
+	int punct(List<String> arr)
+	{
+		int p1 = Collections.frequency(arr, "'");
+		int p2= Collections.frequency(arr, ",");
+		int p3= Collections.frequency(arr, ".");
+		int p4= Collections.frequency(arr, ":");
+		return (p1+p2+p3+p4);
+	}
+	
+	 char frequencies [][] = new char [99999] [3];  //collects the trigrams that appear in the message
+	 int acc [] = new int [99999];	//collects the frequency of each trigram
+	 int count(String text) 
+	 {        
+	        int i;
+	        for (int k = 0; (k+2)<99999; k++)
+	        {
+	            char ch = text.charAt(k);
+	            char ch2=text.charAt(k+1);
+	            char ch3=text.charAt(k+2);   
+	            for (i = 0; i < k; i++) 
+	               if (frequencies[i] [0] == ch && frequencies[i] [1] == ch2 && frequencies[i] [2] == ch3)
+	               {
+	                  acc [i]++;    
+	                  break;
+	               }  //if and for inside
+	            if (i == k)
+	            {    
+	               frequencies[k] [0] = ch;
+	               frequencies[k] [1] = ch2;
+	               frequencies[k] [2] = ch3;
+	               acc [k] = 1;
+	            }//if
+	        }//for outside
+
+	      int temp;
+	      char temp1, temp2, temp3;
+	      for (int pass = 1; pass < frequencies.length; pass++)
+	         for (int pair = 1; pair < frequencies.length; pair++)
+	            if (acc[pair -1] < acc[pair]){
+	               temp = acc[pair-1];
+	               temp1 = frequencies[pair-1][0];
+	               temp2 = frequencies[pair-1][1];
+	               temp3 = frequencies[pair-1][2];
+	               acc[pair-1] = acc[pair];
+	               frequencies[pair-1][0] = frequencies[pair][0];
+	               frequencies[pair-1][1] = frequencies[pair][1];
+	               frequencies[pair-1][2] = frequencies[pair][2];
+	               acc[pair] = temp;
+	               frequencies[pair][0] = temp1;
+	               frequencies[pair][1] = temp2;
+	               frequencies[pair][2] = temp3;
+	            }//if 
+	      int count1=0;
+	      for(int m=0;m<acc.length;m++)
+	      {
+	    	  count1+=acc[m];
+	      }
+	      return count1;
+	    }  //count
 	
 	
 	int conjun(List<String> arr)
