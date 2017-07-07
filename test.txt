@@ -1,0 +1,76 @@
+Last edited 4/25/2012    Page 1 of 2 
+ 
+ 
+Exporting from NVivo  
+After spending several hours working on your project in NVivo, it’s a good idea to back up your file to 
+non-NVivo file formats. These can be useful for sharing portions of the project with team members or 
+progress reports to faculty advisers. It’s also an easily accessible record if you are unsure of future access 
+to NVivo. Below is a list of elements of a project you may want to export. You can find export options in 
+one of two ways:  
+1. Open the External Data ribbon to locate the “export” button
+ 
+2. Select the item(s) in the list view. Right click and select export  
+ 
+Nodes 
+You have two basic options for downloading nodes. “List” is a list of all nodes but without content. 
+“Content” is the content of one node and can only be exported one node at a time.  
+? List of your nodes: 
+o Open the Node drawer. In List view of Nodes, click on a node. Right click or use 
+“external data” ribbon. 
+o Export list will prompt you to save a file formatted as .xls 
+? Content of one node 
+o Open the Node drawer. In List view of nodes, click on a node. Right click or use “external 
+data” ribbon. 
+o Select Export Node 
+? Export Entire content: As HTML file 
+? Export Reference view: As Word doc 
+Center for Teaching, Research & Learning  
+Research Support Group at the Social Science Research Lab  
+American University, Washington, D.C.  
+http://www.american.edu/provost/ctrl/  
+202-885-3862  
+Last edited 4/25/2012    Page 2 of 2 
+ 
+? Export Summary view: As Excel file. It produces a list of counts and coverage in 
+each source for that node 
+? Metadata such as source descriptions, annotations, relationships, links and 
+memo links can all be exported. 
+Coded Source 
+? Open the Source drawer. In List view of sources, click on the source you wish to export.  
+o In the View ribbon, turn on the highlighting you wish to export. 
+o In the Source list view, click the source so that it is highlighted blue. 
+o In the External Data ribbon, select export or right click the highlighted source name. 
+o Select Export Document 
+? Select which metadata you wish to export as well: source descriptions, 
+annotations, relationships, links and memo links. 
+o Click OK 
+o Choose where to save the document in .doc format. 
+? If you wish to save the coding stripes as well, this is the best option:  
+o Turn on the coding stripes view; you may also want the highlights view visible. 
+o Right click in the open source view or on the source name in the list view. Select Print. 
+o If you’d like to save additional metadata, select those here. 
+o Click OK and “Create PDF” rather than sending to a printer. 
+o While viewing the PDF, set up the view to be 2 pages displayed on one page. You can 
+then see the coding stripes to the right of the original text.  
+Transcripts 
+? Click on audio or video source in list view.  
+? From the External Data ribbon, select export > export document/transcript. 
+? Select transcript instead of Entire Content. 
+o Entire content will produce a .html file that includes the media and its transcript. 
+? Choose location to save file in .doc format. 
+Attribute Classification Sheet 
+? From the Classification drawer, select the appropriate Node Classification.  
+? In the Home ribbon, click open. This will open the Classification Sheet in its spreadsheet view. 
+? Make sure the node classification is highlighted blue in the list view. 
+? From the External Data ribbon > Export > Export Classification Sheet 
+? Export to (choose location to save). 
+? Change any settings 
+? Click OK to save file in .xls format. 
+Graphs, Models, Charts and other visualization options. 
+? Open the model or chart. 
+? Select the name of the model from the list view so it is highlighted blue. 
+? From the External Data ribbon, click Export > Export Model. 
+? You can save as a .jpg, .gif or .bmp file. 
+o Tag clouds can be exported as Word documents. 
+o Tree maps export as an image. 
+o A cluster analysis can export as an image. 

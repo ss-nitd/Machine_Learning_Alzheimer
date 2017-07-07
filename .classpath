@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/fontbox-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/jempbox-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/pdfbox-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/pdfbox-app-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/pdfbox-tools-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/preflight-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/preflight-app-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/PDF BOX/xmpbox-1.8.13.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/stanford-postagger-full-2016-10-31/stanford-postagger.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/stanford-postagger-full-2016-10-31/stanford-postagger-3.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/stanford-postagger-full-2016-10-31/stanford-postagger-3.7.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/stanford-postagger-full-2016-10-31/stanford-postagger-3.7.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/apache-opennlp-1.8.0/lib/opennlp-brat-annotator-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/apache-opennlp-1.8.0/lib/opennlp-morfologik-addon-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/apache-opennlp-1.8.0/lib/opennlp-tools-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/apache-opennlp-1.8.0/lib/opennlp-uima-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/javacsv2.1/javacsv.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/opencsv-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/weka.jar" sourcepath="C:/Users/sxs1653/Downloads/weka.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/snowball-20051019.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sxs1653/Downloads/jswarm-pso_2_08.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
