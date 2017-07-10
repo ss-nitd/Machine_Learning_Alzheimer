@@ -1,0 +1,43 @@
+Tester:     weka.experiment.PairedCorrectedTTester -G 4,5,6 -D 1 -R 2 -S 0.05 -result-matrix "weka.experiment.ResultMatrixPlainText -mean-prec 2 -stddev-prec 2 -col-name-width 0 -row-name-width 25 -mean-width 3 -stddev-width 2 -sig-width 1 -count-width 5 -show-avg -print-col-names -print-row-names -enum-col-names"
+Analysing:  Root_relative_squared_error
+Datasets:   1
+Resultsets: 23
+Confidence: 0.05 (two tailed)
+Sorted by:  -
+Date:       7/10/17 4:21 PM
+
+
+Dataset                   (1) lazy.IBk | (2) trees (3) funct (4) funct (5) funct (6) lazy. (7) func (8) lazy. (9) meta. (10) meta (11) meta. (12) met (13) meta (14) meta (15) meta. (16) meta. (17) meta. (18) rule (19) rule (20) rules (21) tree (22) tree (23) tree
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+'features-weka.filters.un  (5)   15.41 |   50.44     20.75     16.96     21.49     14.73     9.68     23.56     61.70     36.50     100.00 v   9.31     43.35     31.46     100.00 v   100.00 v   100.00 v   21.96     14.80     100.00 v   49.66     19.61     22.35  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Average                          15.41 |   50.44     20.75     16.96     21.49     14.73     9.68     23.56     61.70     36.50     100.00     9.31     43.35     31.46     100.00     100.00     100.00     21.96     14.80     100.00     49.66     19.61     22.35  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                               (v/ /*) |   (0/1/0)   (0/1/0)   (0/1/0)   (0/1/0)   (0/1/0)  (0/1/0)   (0/1/0)   (0/1/0)   (0/1/0)    (1/0/0)  (0/1/0)   (0/1/0)   (0/1/0)    (1/0/0)    (1/0/0)    (1/0/0)   (0/1/0)   (0/1/0)    (1/0/0)   (0/1/0)   (0/1/0)   (0/1/0)
+
+
+Key:
+(1) lazy.IBk '-K 1 -W 0 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\"' -3080186098777067172
+(2) trees.REPTree '-M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0' -9216785998198681299
+(3) functions.LinearRegression '-S 0 -R 1.0E-8 -num-decimal-places 4' -3364580862046573747
+(4) functions.SimpleLinearRegression '' 1679336022895414137
+(5) functions.GaussianProcesses '-L 1.0 -N 0 -K \"functions.supportVector.PolyKernel -E 1.0 -C 250007\" -S 1' -8620066949967678545
+(6) lazy.KStar '-B 20 -M a' 332458330800479083
+(7) functions.MultilayerPerceptron '-L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a' -5990607817048210779
+(8) lazy.LWL '-U 0 -K -1 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\" -W trees.DecisionStump' 1979797405383665815
+(9) meta.AdditiveRegression '-S 1.0 -I 10 -W trees.DecisionStump' -2368937577670527151
+(10) meta.Bagging '-P 100 -S 1 -num-slots 1 -I 10 -W trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0' -115879962237199703
+(11) meta.CVParameterSelection '-X 10 -S 1 -W rules.ZeroR' -6529603380876641265
+(12) meta.RandomCommittee '-S 1 -num-slots 1 -I 10 -W trees.RandomTree -- -K 0 -M 1.0 -V 0.001 -S 1' -9204394360557300093
+(13) meta.RandomSubSpace '-P 0.5 -S 1 -num-slots 1 -I 10 -W trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0' 1278172513912424947
+(14) meta.RegressionByDiscretization '-B 10 -K weka.estimators.UnivariateEqualFrequencyHistogramEstimator -W trees.J48 -- -C 0.25 -M 2' 5066426153134050378
+(15) meta.Stacking '-X 10 -M \"rules.ZeroR \" -S 1 -num-slots 1 -B \"rules.ZeroR \"' 5134738557155845452
+(16) meta.Vote '-S 1 -B \"rules.ZeroR \" -R AVG' -637891196294399624
+(17) meta.WeightedInstancesHandlerWrapper '-S 1 -W rules.ZeroR' 2980789213434466135
+(18) rules.DecisionTable '-X 1 -S \"BestFirst -D 1 -N 5\"' 2888557078165701326
+(19) rules.M5Rules '-M 4.0' -1746114858746563180
+(20) rules.ZeroR '' 48055541465867954
+(21) trees.DecisionStump '' 1618384535950391
+(22) trees.RandomForest '-P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1' 1116839470751428698
+(23) trees.RandomTree '-K 0 -M 1.0 -V 0.001 -S 1' -9051119597407396024
+
