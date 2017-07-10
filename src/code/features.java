@@ -17,6 +17,7 @@ import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 
 class features 
 {
+	static int nnn;
 	public static void main(String[] args)throws IOException
 	{
 		features fea=new features();
@@ -162,16 +163,17 @@ class features
 						array[i][j++]=((no+sub+verb+adverb)/cc)*100;//Lexical density
 						double funct=fea.func(arrlist);
 						array[i][j++]=(funct/cc)*100;//Function words
-						array[i][j++]=(punt/cc)*100; //number of punctuations
-						double tri=fea.count(line);
+						array[i][j++]=punt; //number of punctuations
+						nnn=line.length();
+						/*double tri=fea.count(line,nnn);
 						array[i][j++]=(tri/cc)*100;//number of trigrams
-						i++;
+*/						i++;
 						j=0;
 												
 				}//end of the file for loop
 		        for(int k=0;k<nn;k++)
 		        {
-		        	for(int m=0;m<5;m++)
+		        	for(int m=0;m<21;m++)
 		        		System.out.print(array[k][m]+" ");
 		        	System.out.println();
 		        }
@@ -184,7 +186,7 @@ class features
 					fileWriter=new BufferedWriter(new FileWriter("C:/Users/sxs1653/Desktop/feature.arff"));
 					fileWriter.write("@RELATION features");
 					fileWriter.newLine();
-					fileWriter.newLine();
+					//fileWriter.newLine();
 					//fileWriter.newLine();
 					fileWriter.write("@ATTRIBUTE UNIQUE_WORD"+" real");
 					fileWriter.newLine();
@@ -216,9 +218,9 @@ class features
 					fileWriter.newLine();
 					fileWriter.write("@ATTRIBUTE TTR"+" real");
 					fileWriter.newLine();
-					fileWriter.write("@ATTRIBUTE BRUNETT'S_INDEX"+" real");
+					fileWriter.write("@ATTRIBUTE BRUNETTS_INDEX"+" real");
 					fileWriter.newLine();
-					fileWriter.write("@ATTRIBUTE HONORE'S_STATISTIC"+" real");
+					fileWriter.write("@ATTRIBUTE HONORES_STATISTIC"+" real");
 					fileWriter.newLine();
 					fileWriter.write("@ATTRIBUTE MEAN_WORD_LENGTH"+" real");
 					fileWriter.newLine();
@@ -228,15 +230,15 @@ class features
 					fileWriter.newLine();
 					fileWriter.write("@ATTRIBUTE PUNCTUATION"+" real");
 					fileWriter.newLine();
-					fileWriter.write("@ATTRIBUTE TRIGRAMS"+" real");
-					fileWriter.newLine();
-					fileWriter.newLine();
+					/*fileWriter.write("@ATTRIBUTE TRIGRAMS"+" real");
+					fileWriter.newLine();*/
+					//fileWriter.newLine();
 					//fileWriter.newLine();
 					fileWriter.write("@DATA");
 					fileWriter.newLine();
 					for(int k=0;k<mm;k++)
 			        {
-			        	for(int m=0;m<22;m++)
+			        	for(int m=0;m<21;m++)
 			        		fileWriter.write(new String(Double.toString(array[k][m]))+",");
 			        	//fileWriter.write("?");
 			        	fileWriter.newLine();
@@ -364,12 +366,12 @@ class features
 		return (p1+p2+p3+p4);
 	}
 	
-	 char frequencies [][] = new char [99999] [3];  //collects the trigrams that appear in the message
-	 int acc [] = new int [99999];	//collects the frequency of each trigram
-	 int count(String text) 
+	 /*char frequencies [][] = new char [nnn] [3];  //collects the trigrams that appear in the message
+	 int acc [] = new int [nnn];	//collects the frequency of each trigram
+	 int count(String text,int nnn) 
 	 {        
 	        int i;
-	        for (int k = 0; (k+2)<99999; k++)
+	        for (int k = 0; (k+10)<text.length(); k++)
 	        {
 	            char ch = text.charAt(k);
 	            char ch2=text.charAt(k+1);
@@ -414,7 +416,7 @@ class features
 	      }
 	      return count1;
 	    }  //count
-	
+*/	
 	
 	int conjun(List<String> arr)
 	{
